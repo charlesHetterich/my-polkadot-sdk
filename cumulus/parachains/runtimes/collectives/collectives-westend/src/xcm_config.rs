@@ -17,6 +17,7 @@ use super::{
 	AccountId, AllPalletsWithSystem, Balances, BaseDeliveryFee, FeeAssetId, Fellows, ParachainInfo,
 	ParachainSystem, PolkadotXcm, Runtime, RuntimeCall, RuntimeEvent, RuntimeOrigin,
 	TransactionByteFee, WeightToFee, WestendTreasuryAccount, XcmpQueue,
+	dday::prover::types::AllowTransactWithDDayDataUpdatesFrom,
 };
 use frame_support::{
 	parameter_types,
@@ -164,6 +165,8 @@ pub type Barrier = TrailingSetTopicAsId<
 					AllowSubscriptionsFrom<ParentRelayOrSiblingParachains>,
 					// HRMP notifications from the relay chain are OK.
 					AllowHrmpNotificationsFromRelayChain,
+					// Updates from AssetHub with DDay related data (header, total issuance, ...).
+					AllowTransactWithDDayDataUpdatesFrom<Equals<AssetHub>>,
 				),
 				UniversalLocation,
 				ConstU32<8>,
