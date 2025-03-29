@@ -17,6 +17,40 @@ forks](https://img.shields.io/github/forks/paritytech/polkadot-sdk)
 
 </div>
 
+## MY NOTES
+### Where do I make that update??
+- I want to edit the **host functions**: `primitives/io/src/lib.rs`
+#### substrate folder
+- `frame`
+- `client`
+- `primitives`
+- `primitives/io/src/lib.rs:` (host functions!!!)
+  - `Storage`
+  - `batch_verify`
+  - `Hashing`
+  - `Core`
+- `primitives/inherents/src/lib.rs` (all inherents)
+- `frame/executive/src/lib.rs` 
+  - `apply_extrinsic`
+- `frame/system/src/lib.rs`
+  - `set_code`
+- `primitives/storage/src/lib.rs` (well_known_keys)
+
+#### pollkadot folder (relay chain code?)
+- `polkadot/primitives/src/v8/mod.rs`
+  - `well_known_keys`
+
+#### Terms
+- sp: substrate primitives
+- sc: substrate client
+- frame support
+
+- spCore
+-
+- execute_block
+- block_import
+
+
 ## ⚡ Quickstart
 If you want to get an example node running quickly you can execute the following getting started script:
 
